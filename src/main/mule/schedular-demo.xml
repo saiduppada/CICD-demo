@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ftp="http://www.mulesoft.org/schema/mule/ftp" xmlns:file="http://www.mulesoft.org/schema/mule/file"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
+http://www.mulesoft.org/schema/mule/ftp http://www.mulesoft.org/schema/mule/ftp/current/mule-ftp.xsd">
+	<flow name="schedular-demoFlow" doc:id="b4e728fc-aef4-42ef-944f-daab2368a075" >
+		<scheduler doc:name="Scheduler" doc:id="8d7cd188-8a93-488b-8a4c-e639f2b6f701" >
+			<scheduling-strategy >
+				<fixed-frequency frequency="30" timeUnit="SECONDS"/>
+			</scheduling-strategy>
+		</scheduler>
+		<logger level="INFO" doc:name="Logger" doc:id="9003b402-0d3b-4ec3-88a6-b03397d8b5d7" message="**************** schedular started ***************"/>
+	</flow>
+	<flow name="Fileread" doc:id="ddafce04-8bec-4e27-9e77-745002dd5894" >
+		<file:listener doc:name="On New or Updated File" doc:id="71b70ba8-12a0-4371-a619-354465d81024" >
+			<scheduling-strategy >
+				<fixed-frequency />
+			</scheduling-strategy>
+		</file:listener>
+	</flow>
+</mule>
