@@ -19,5 +19,6 @@ http://www.mulesoft.org/schema/mule/ftp http://www.mulesoft.org/schema/mule/ftp/
 				<fixed-frequency />
 			</scheduling-strategy>
 		</file:listener>
+		<set-payload value="payload" doc:name="Set Payload" doc:id="e95b5b7c-1822-4165-8b93-0d4582b5ef89" />
 	</flow>
 </mule>
